@@ -62,7 +62,7 @@ export function SignUp() {
           placeholder="Email..."
           requir="true"
         />
-
+          {accept && emailError=== 422 && <p className="error">Email has been taken</p>}
         <label htmlFor="password">Password: </label>
         <input
           type="password"

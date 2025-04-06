@@ -1,6 +1,10 @@
 import { SignUp } from "./SignUp";
-
+import Header from "./Components/Header";
 export default function App() {
   return(
-   <SignUp></SignUp>)
+    <div>
+    <Header/>
+    <SignUp/>
+    </div>
+    )
 }

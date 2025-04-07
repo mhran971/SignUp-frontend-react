@@ -9,9 +9,9 @@ export default function Headers() {
           alignItems: "center",
         }}
       >
-        <div style={{ display: "flex", gap: "20px" }}>
-          <h6>Home</h6>
-          <h6>About</h6>
+        <div style={{ display: "flex", gap: "20px" ,textDecoration:"none"}}>
+          <Link to="/">Home</Link>
+          <Link to="/About">About</Link>
         </div>
         <div style={{ display: "flex", gap: "20px" }}>
           <Link to="/register" className="register-bar">

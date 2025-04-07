@@ -1,6 +1,7 @@
 /* Global Css */
 * {
   box-sizing: border-box;
+  font-family: Georgia, Times, 'Times New Roman', serif;
 }
 /* Header */
 .d-flex {

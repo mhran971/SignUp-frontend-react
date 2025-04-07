@@ -2,7 +2,7 @@ import axios from "axios";
 import "./SignUp.css";
 import React from "react";
 
-export function SignUp() {
+export default function SignUp() {
   const [name, setname] = React.useState("");
   const [email, setemail] = React.useState("");
   const [password, setpassword] = React.useState("");

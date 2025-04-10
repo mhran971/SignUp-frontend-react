@@ -10,8 +10,6 @@ export default function Login() {
 
   console.log(email);
   console.log(password);
-  
-  
 
   async function Submit(e) {
     let flag = true;
@@ -21,13 +19,16 @@ export default function Login() {
     else flag = true;
     try {
       if (flag) {
-        await axios.post("http://127.0.0.1:8000/api/login", {
+        let res = await axios.post("http://127.0.0.1:8000/api/login", {
           email: email,
           password: password,
         });
+        if (res.status === 200) {
+          window.localStorage.setItem("email", email);
+          window.location.pathname = "/";
+        }
       }
     } catch (err) {
-      
       setEmailError(err.response.status);
     }
   }

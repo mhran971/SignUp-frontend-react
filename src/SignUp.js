@@ -8,7 +8,7 @@ export default function SignUp() {
   const [password, setpassword] = React.useState("");
   const [passwordR, setpasswordR] = React.useState("");
   const [accept, setaccept] = React.useState(false);
-  const [emailError,setEmailError]=React.useState("")
+  const [emailError, setEmailError] = React.useState("");
 
   console.log(name.length);
   console.log(email);
@@ -20,20 +20,24 @@ export default function SignUp() {
     e.preventDefault();
     setaccept(true);
     if (name.length === 0 || password.length < 8 || password !== passwordR)
-      flag=false;
+      flag = false;
     else flag = true;
-    try{
-    if (flag) {
-          await axios.post("http://127.0.0.1:8000/api/register", {
+    try {
+      if (flag) {
+        let res = await axios.post("http://127.0.0.1:8000/api/register", {
           name: name,
           email: email,
           password: password,
           password_confirmation: passwordR,
         });
-      }}
-      catch(err){
-        setEmailError(err.response.status);
-    } 
+        if(res.status ===200){
+          window.localStorage.setItem("email",email);
+          window.location.pathname="/"
+        }
+      }
+    } catch (err) {
+      setEmailError(err.response.status);
+    }
   }
 
   return (
@@ -62,7 +66,9 @@ export default function SignUp() {
           placeholder="Email..."
           requir="true"
         />
-          {accept && emailError=== 422 && <p className="error">Email has been taken</p>}
+        {accept && emailError === 422 && (
+          <p className="error">Email has been taken</p>
+        )}
         <label htmlFor="password">Password: </label>
         <input
           type="password"

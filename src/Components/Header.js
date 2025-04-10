@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 export default function Headers() {
+  function handlogout(){
+    window.localStorage.removeItem("email");
+    window.location.pathname= "/";
+  }
   return (
     <div>
       <nav
@@ -9,18 +13,24 @@ export default function Headers() {
           alignItems: "center",
         }}
       >
-        <div style={{ display: "flex", gap: "20px" ,textDecoration:"none"}}>
+        <div style={{ display: "flex", gap: "20px", textDecoration: "none" }}>
           <Link to="/">Home</Link>
           <Link to="/About">About</Link>
         </div>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <Link to="/register" className="register-bar">
-            Register
+        {!window.localStorage.getItem("email") ? (
+          <div style={{ display: "flex", gap: "20px" }}>
+            <Link to="/register" className="register-bar">
+              Register
+            </Link>
+            <Link to="/login" className="register-bar">
+              Login
+            </Link>
+          </div>
+        ) : (
+          <Link to="/logout" className="register-bar" onClick={handlogout}>
+            Logout
           </Link>
-          <Link to="/login" className="register-bar">
-            Login
-          </Link>
-        </div>
+        )}
       </nav>
     </div>
   );

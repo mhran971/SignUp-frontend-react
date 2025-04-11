@@ -4,6 +4,9 @@ export default function Headers() {
     window.localStorage.removeItem("email");
     window.location.pathname= "/";
   }
+
+
+  
   return (
     <div>
       <nav

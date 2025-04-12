@@ -5,8 +5,7 @@ export default function TopBar() {
     <div className="Top-Bar">
       <h1> TopBar</h1>
       <Link to="/" className="register-nav">
-        Go To Web Site
-      </Link>
+        Go To Web Site</Link>
     </div>
   );
 }

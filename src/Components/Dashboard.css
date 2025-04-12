@@ -1,4 +1,7 @@
 /* Global  */
+*{
+  font-family: "Cairo"; 
+}
 
 .content-flex{
     display: flex;
@@ -29,7 +32,8 @@
 
 .Side-Bar {
  
-  padding: 20px;
+  padding: 10px;
+  padding-top: 0px;
   left: 3px;
   border-right: 1px solid #cbc9c9;
   border-radius: 0% 10px 10px 0%;
@@ -41,6 +45,21 @@
   -moz-border-radius: 0% 10px 10px 0%;
   -ms-border-radius: 0% 10px 10px 0%;
   -o-border-radius: 0% 10px 10px 0%;
+}
+.sb-btn{
+  padding: 0.5rem;
+  background-color:  #006752;;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: "Cairo";
+  cursor: pointer;
+  margin-top: 2rem;
+  text-decoration: none;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Table Styles */
@@ -130,4 +149,8 @@ td {
   -o-border-radius: 1%;
   border-style:solid;
   border-color:  #009879;
+}
+
+.preserve-whitespace {
+  white-space: pre-wrap;
 }

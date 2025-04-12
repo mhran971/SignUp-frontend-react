@@ -16,8 +16,8 @@ export default function Users() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  const showUsers = users.map((user) => (
-    <tr>
+  const showUsers = users.map((user,index) => (
+    <tr key={index}>
       <td>{user.id}</td>
       <td>{user.name}</td>
       <td>{user.email}</td>

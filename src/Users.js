@@ -4,16 +4,20 @@ export default function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/user/show')
+    fetch("http://127.0.0.1:8000/api/user/show")
       .then((res) => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
         return res.json();
       })
-      .then((data) => setUsers(data))
-      .catch((error) => console.error('Error fetching data:', error));
+      .then((data) => setUsers(data));
   }, []);
+
+  const showUsers = users.map((user) => (
+    <tr>
+      <td>{user.id}</td>
+      <td>{user.name}</td>
+      <td>{user.email}</td>
+    </tr>
+  ));
 
   return (
     <div>
@@ -27,15 +31,7 @@ export default function Users() {
           </tr>
         </thead>
 
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-            </tr>
-          ))}
-        </tbody>
+        <tbody>{showUsers}</tbody>
       </table>
     </div>
   );

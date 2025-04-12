@@ -6,9 +6,14 @@ export default function Users() {
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/user/show")
       .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        
         return res.json();
       })
-      .then((data) => setUsers(data));
+      .then((data) => setUsers(data))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const showUsers = users.map((user) => (

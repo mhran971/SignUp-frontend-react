@@ -27,6 +27,36 @@ export default function Users(){
                         <td>rafi</td>
                         <td>rafi@email.com</td>
                     </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Nageeb</td>
+                        <td>Nageeb@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>maged</td>
+                        <td>maged@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>rafi</td>
+                        <td>rafi@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Nageeb</td>
+                        <td>Nageeb@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>maged</td>
+                        <td>maged@email.com</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>rafi</td>
+                        <td>rafi@email.com</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -1,0 +1,35 @@
+/* Top Bar */
+
+.Top-Bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top:0;
+    width: 98%;
+    height: 40px;
+    border-bottom: 1px #014848;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+/* Side Bar*/
+
+.Side-Bar{
+    
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    margin-top: 40px;
+    margin-left: 3px;
+    left: 2px;
+    border-radius: 0% 10px 10px 0%;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    -webkit-border-radius: 0% 10px 10px 0%;
+    -moz-border-radius: 0% 10px 10px 0%;
+    -ms-border-radius: 0% 10px 10px 0%;
+    -o-border-radius: 0% 10px 10px 0%;
+}

@@ -46,7 +46,7 @@
 }
 
 .form-father button,
-.register-bar {
+.register-nav {
   padding: 0.5rem;
   background-color: #4f46e5;
   color: white;
@@ -60,7 +60,7 @@
 }
 
 .form-father button:hover,
-.register-bar:hover {
+.register-nav:hover {
   background-color: #33299e;
 }
 

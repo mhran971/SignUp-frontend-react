@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import SignUp from "./SignUp";
+import  "./Components/Dashboard.css";
 import Login from "./Login";
 import Home from "./Home";
 import Dashboard from "./Components/Dashboard";

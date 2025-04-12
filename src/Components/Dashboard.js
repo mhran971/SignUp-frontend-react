@@ -1,7 +1,19 @@
-export default function Dashboard(){
-   return(
+import TopBar from "./TopBar";
+import SideBar from "./SideBar";
+
+
+export default function Dashboard() {
+  return (
     <div>
-        <h1>Dashboard</h1> 
+      <div>
+        <TopBar></TopBar>
+        <SideBar></SideBar>
+      </div>
+      <div>
+        <div>
+          <h1></h1>
+        </div>
+      </div>
     </div>
-   );
+  );
 }

@@ -1,18 +1,13 @@
 import TopBar from "./TopBar";
 import SideBar from "./SideBar";
 
-
 export default function Dashboard() {
   return (
     <div>
-      <div>
-        <TopBar></TopBar>
+      <TopBar></TopBar>
+      <div className="content-flex">
         <SideBar></SideBar>
-      </div>
-      <div>
-        <div>
-          <h1></h1>
-        </div>
+        <h1>helpppp</h1>
       </div>
     </div>
   );

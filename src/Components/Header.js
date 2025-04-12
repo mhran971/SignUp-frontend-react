@@ -4,6 +4,9 @@ export default function Headers() {
     window.localStorage.removeItem("email");
     window.location.pathname= "/";
   }
+
+
+  
   return (
     <div>
       <nav
@@ -19,15 +22,15 @@ export default function Headers() {
         </div>
         {!window.localStorage.getItem("email") ? (
           <div style={{ display: "flex", gap: "20px" }}>
-            <Link to="/register" className="register-bar">
+            <Link to="/register" className="register-nav">
               Register
             </Link>
-            <Link to="/login" className="register-bar">
+            <Link to="/login" className="register-nav">
               Login
             </Link>
           </div>
         ) : (
-          <Link to="/logout" className="register-bar" onClick={handlogout}>
+          <Link to="/logout" className="register-nav" onClick={handlogout}>
             Logout
           </Link>
         )}

@@ -48,7 +48,7 @@
 .form-father button,
 .register-nav {
   padding: 0.5rem;
-  background-color: #4f46e5;
+  background-color:  #006752;;
   color: white;
   border: none;
   border-radius: 16px;
@@ -61,7 +61,7 @@
 
 .form-father button:hover,
 .register-nav:hover {
-  background-color: #33299e;
+  background-color: #004e3e;;
 }
 
 .error {

@@ -4,9 +4,17 @@ import axios from "axios";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  const [runUseEffect, setRun] = useState(0);
 
-  function deleteUser(id) {
-    axios.delete(`http://127.0.0.1:8000/api/user/delete/${id}`);
+  async function deleteUser(id) {
+    try {
+      const res = await axios.delete(
+        `http://127.0.0.1:8000/api/user/delete/${id}`
+      );
+      if (res.status === 200) setRun((prev) => prev + 1);
+    } catch {
+      console.log("error");
+    }
   }
   const showUsers = users.map((user, index) => (
     <tr key={index}>
@@ -45,7 +53,7 @@ export default function Users() {
       })
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching data:", error));
-  }, [users]);
+  }, [runUseEffect]);
 
   return (
     <div>

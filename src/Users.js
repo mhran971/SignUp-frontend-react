@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./all.min.css";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
@@ -9,19 +10,23 @@ export default function Users() {
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
-        
+
         return res.json();
       })
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  
-  const showUsers = users.map((user,index) => (
+  const showUsers = users.map((user, index) => (
     <tr key={index}>
       <td>{user.id}</td>
       <td>{user.name}</td>
       <td>{user.email}</td>
+      <td style={{ display:"flex" ,justifyContent:"space-around"}}>
+        <i style={{ color:"orange" }} class="fa-duotone fa-solid fa-pen-to-square"></i>
+        <h1> </h1>
+        <i style={{ color:"red" }} class="fa-solid fa-xmark"></i>
+      </td>
     </tr>
   ));
 
@@ -34,6 +39,7 @@ export default function Users() {
             <th>ID</th>
             <th>User</th>
             <th>Email</th>
+            <th>Action</th>
           </tr>
         </thead>
 

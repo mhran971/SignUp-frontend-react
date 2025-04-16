@@ -39,6 +39,7 @@
   border-radius: 0% 10px 10px 0%;
   width: 200px;
   height: 200vh;
+  box-sizing: border-box;
   background-color:  #009879;
   color: #fff;
   -webkit-border-radius: 0% 10px 10px 0%;
@@ -58,6 +59,7 @@
   margin-top: 2rem;
   text-decoration: none;
   width: 90%;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }

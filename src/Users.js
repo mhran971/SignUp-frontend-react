@@ -23,9 +23,9 @@ export default function Users() {
       <td>{user.name}</td>
       <td>{user.email}</td>
       <td style={{ display:"flex" ,justifyContent:"space-around", paddingRight:"50px" ,cursor:"pointer"}}>
-        <i style={{ color:"orange" }} class="fa-duotone fa-solid fa-pen-to-square"></i>
-        <h1> </h1>
-        <i style={{ color:"red" }} class="fa-solid fa-xmark"></i>
+        <i style={{ color:"orange" }} className="fa-duotone fa-solid fa-pen-to-square"></i>
+        
+        <i style={{ color:"red" }} className="fa-solid fa-xmark"></i>
       </td>
     </tr>
   ));

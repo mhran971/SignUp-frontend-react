@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./all.min.css";
 
 export default function Users() {
@@ -22,10 +23,24 @@ export default function Users() {
       <td>{user.id}</td>
       <td>{user.name}</td>
       <td>{user.email}</td>
-      <td style={{ display:"flex" ,justifyContent:"space-around", paddingRight:"50px" ,cursor:"pointer"}}>
-        <i style={{ color:"orange" }} class="fa-duotone fa-solid fa-pen-to-square"></i>
-        <h1> </h1>
-        <i style={{ color:"red" }} class="fa-solid fa-xmark"></i>
+      <td
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          paddingRight: "50px",
+          cursor: "pointer",
+        }}
+      >
+        <Link to={`${user.id}`}>
+          <i
+            style={{ color: "orange" }}
+            className="fa-solid fa-pen-to-square"
+          ></i>
+        </Link>
+        <Link to={`${user.id}`}>
+          
+        <i style={{ color: "red" }} className="fa-solid fa-xmark"></i>
+        </Link>
       </td>
     </tr>
   ));

@@ -10,7 +10,7 @@ export default function UpdateUser() {
   const [passwordR, setpasswordR] = React.useState("");
   const [accept, setaccept] = React.useState(false);
   const [emailError, setEmailError] = React.useState("");
-  const [data, setData] = React.useState("");
+  const [data, setData] = React.useState();
   const [runUseState, setRun] = React.useState(0);
 
   console.log(name.length);
@@ -28,7 +28,9 @@ export default function UpdateUser() {
         }
       })
       .then((data) => {
-        setData(data);
+        setname(data[0].name);
+        setemail(data[0].email);
+        
       });
   }, [runUseState]);
 
@@ -41,15 +43,16 @@ export default function UpdateUser() {
     else flag = true;
     try {
       if (flag) {
-        let res = await axios.post(`http://127.0.0.1:8000/api/update/${id}`, {
+        let res = await axios.post(`http://127.0.0.1:8000/api/user/update/${id}`, {
           name: name,
           email: email,
           password: password,
           password_confirmation: passwordR,
         });
         if (res.status === 200) {
+          setRun((prev) => prev + 1);
           window.localStorage.setItem("email", email);
-          window.location.pathname = "/users";
+          window.location.pathname = "/Dashboard/users";
         }
       }
     } catch (err) {
@@ -69,7 +72,7 @@ export default function UpdateUser() {
             type="text"
             id="name"
             name="name"
-            value={data.name}
+            value={name}
             onChange={(e) => setname(e.target.value)}
             placeholder="Name..."
             requir="true"
@@ -82,7 +85,7 @@ export default function UpdateUser() {
             type="email"
             id="email"
             name="email"
-            value={data.email}
+            value={email}
             onChange={(e) => setemail(e.target.value)}
             placeholder="Email..."
             requir="true"
@@ -95,7 +98,7 @@ export default function UpdateUser() {
             type="password"
             id="password"
             name="password"
-            value={data.password}
+            // value={ }
             onChange={(e) => setpassword(e.target.value)}
             placeholder="Password..."
             requir="true"
@@ -108,7 +111,7 @@ export default function UpdateUser() {
             type="password"
             id="passwordR"
             name="passwordR"
-            value={data.passwordR}
+            // value={ }
             onChange={(e) => setpasswordR(e.target.value)}
             placeholder="Verified password..."
             requir="true"
@@ -116,7 +119,7 @@ export default function UpdateUser() {
           {password !== passwordR && accept === true && (
             <p className="error">Varified password doesn't matched</p>
           )}
-          <button type="submit">Submit</button>
+          <button type="submit">Update</button>
         </form>
       </div>
     </div>

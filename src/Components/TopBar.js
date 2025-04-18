@@ -4,7 +4,7 @@ export default function TopBar() {
   return (
     <div className="Top-Bar">
       <h1> TopBar</h1>
-      <Link to="/register" className="register-nav">
+      <Link to="/Dashboard" className="register-nav">
         Go To Web Site</Link>
     </div>
   );

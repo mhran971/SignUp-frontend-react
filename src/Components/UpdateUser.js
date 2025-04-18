@@ -10,7 +10,6 @@ export default function UpdateUser() {
   const [passwordR, setpasswordR] = React.useState("");
   const [accept, setaccept] = React.useState(false);
   const [emailError, setEmailError] = React.useState("");
-  const [data, setData] = React.useState();
   const [runUseState, setRun] = React.useState(0);
 
   console.log(name.length);

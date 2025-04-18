@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./all.min.css";
 import axios from "axios";
 
@@ -32,7 +31,7 @@ export default function Users() {
         <i
           style={{ color: "orange", cursor: "pointer" }}
           className="fa-duotone fa-solid fa-pen-to-square"
-          onClick={() => deleteUser(user.id)}
+          // onClick={() => deleteUser(user.id)}
         ></i>
         <i
           style={{ color: "red", cursor: "pointer" }}
@@ -55,7 +54,7 @@ export default function Users() {
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching data:", error));
 
-  }, []);
+  }, [runUseEffect]);
 
   
 

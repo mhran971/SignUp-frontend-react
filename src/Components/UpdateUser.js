@@ -12,11 +12,6 @@ export default function UpdateUser() {
   const [emailError, setEmailError] = React.useState("");
   const [runUseState, setRun] = React.useState(0);
 
-  console.log(name.length);
-  console.log(email);
-  console.log(password);
-  console.log(passwordR);
-
   const id = window.location.pathname.split("/").slice(-1)[0];
 
   useEffect(() => {
@@ -61,9 +56,7 @@ export default function UpdateUser() {
 
   return (
     <div className="signup">
-      <div>
-        <Header />
-      </div>
+      
       <div className="father">
         <form className="form-father" onSubmit={Submit}>
           <label htmlFor="name">Name: </label>

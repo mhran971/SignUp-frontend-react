@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./all.min.css";
 import axios from "axios";
 
@@ -9,32 +10,38 @@ export default function Users() {
   async function deleteUser(id) {
     try {
       const res = await axios.delete(
-        `http://127.0.0.1:8000/api/user/delete/${id}`
+        `http://127.0.0.1:8000/api/user/delete/${id}` 
       );
+      
       if (res.status === 200) setRun((prev) => prev + 1);
-    } catch {
-      console.log("error");
+    } catch (error) {
+      console.error("Error deleting user:", error);
     }
   }
+
   const showUsers = users.map((user, index) => (
     <tr key={index}>
       <td>{user.id}</td>
       <td>{user.name}</td>
       <td>{user.email}</td>
-      <td
+      <td 
         style={{
           display: "flex",
           justifyContent: "space-around",
           paddingRight: "50px",
+          alignItems: "center"
+            
         }}
       >
+
+        <Link to={`${user.id}`}>
+          <i
+            style={{ color: "orange", cursor: "pointer" }}
+            className="fa-duotone fa-solid fa-pen-to-square"
+          ></i>
+        </Link>
         <i
-          style={{ color: "orange", cursor: "pointer" }}
-          className="fa-duotone fa-solid fa-pen-to-square"
-          // onClick={() => deleteUser(user.id)}
-        ></i>
-        <i
-          style={{ color: "red", cursor: "pointer" }}
+          style={{ color: "red", cursor: "pointer"}}
           className="fa-solid fa-xmark"
           onClick={() => deleteUser(user.id)}
         ></i>
@@ -46,6 +53,7 @@ export default function Users() {
     fetch("http://127.0.0.1:8000/api/user/show")
       .then((res) => {
         if (!res.ok) {
+          console.log("hello");
           throw new Error("Network response was not ok");
         }
 
@@ -53,10 +61,7 @@ export default function Users() {
       })
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching data:", error));
-
   }, [runUseEffect]);
-
-  
 
   return (
     <div>

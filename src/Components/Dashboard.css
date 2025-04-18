@@ -41,6 +41,7 @@
   height: 200vh;
   background-color:  #009879;
   color: #fff;
+  box-sizing: border-box;
   -webkit-border-radius: 0% 10px 10px 0%;
   -moz-border-radius: 0% 10px 10px 0%;
   -ms-border-radius: 0% 10px 10px 0%;
@@ -58,6 +59,8 @@
   margin-top: 2rem;
   text-decoration: none;
   width: 90%;
+  box-sizing: border-box;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
